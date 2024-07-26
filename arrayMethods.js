@@ -83,3 +83,31 @@ console.log(num); // [ 100, 2, 3, 42, 50, 55 ]
 
 num.sort(compare);
 console.log(num); //[ 2, 3, 42, 50, 55, 100 ]
+
+//reverse method
+// it reverse the array
+
+const numArr=[1,2,3,4,5]
+ numArr.reverse()
+console.log(numArr);
+
+// splice
+// array.splice(1 konse index se delete krna hai, 2 kine elem delete krna hai,3 add new elements)
+// it changes original array.
+//it returns removed elements .
+const arrr= [1,2,3,4,5,6]
+ const result= arrr.splice(2,3,111,222,333)
+
+console.log(arrr); //[ 1, 2, 111, 222, 333, 6 ] 
+console.log(result);//[ 3, 4, 5 ]
+
+//slice method
+// it returns new array 
+// doest not effect to original array
+// in case of 1 arrgument : it takes index number and slices array from index number to end of array, including that index number which we are passing
+// in case of 2 arrugument : it takes starting index and ending index for slicing a peece of array and it does not include ending index in slicing of array 
+
+const sliceArr= [1,2,3,4,5,6,7,8,9,10]
+//  const newSliceArr= sliceArr.slice(4) // case 1: [ 5, 6, 7, 8, 9, 10 ]
+ const newSliceArr= sliceArr.slice(4,8) // case 2 : [ 5, 6, 7, 8 ]
+ console.log('sliceArr :',newSliceArr);
