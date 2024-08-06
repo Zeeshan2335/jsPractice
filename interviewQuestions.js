@@ -39,15 +39,15 @@ for (let i = 0; inputVal + 1 > i; i++) {
 
 // find the big length word from an array
 
-const words = [ "imarn","Zeeshan", "faizan", "Syed Rehan", "sohel"];
+const words = ["imarn", "Zeeshan", "faizan", "Syed Rehan", "sohel"];
 
-const handleBigWord=(array)=>{
-    const wordSort = array.sort((a, b) => (a?.length > b?.length ? 1 : -1));
-    const bigLength = wordSort.length - 1;
-    const bigLengthWord = wordSort[bigLength];
-    return bigLengthWord
-}
-console.log("function :",handleBigWord(words));
+const handleBigWord = (array) => {
+  const wordSort = array.sort((a, b) => (a?.length > b?.length ? 1 : -1));
+  const bigLength = wordSort.length - 1;
+  const bigLengthWord = wordSort[bigLength];
+  return bigLengthWord;
+};
+console.log("function :", handleBigWord(words));
 
 //  console.log('wordSort',bigLengthWord);
 
@@ -60,13 +60,28 @@ const findBigWorkUsingForLoop = (array) => {
     let elem = words[i];
     for (let j = 0; 1 > j; j++) {
       let elemB = array[j];
-        elem.length < elemB.length ? arrrSort.push(elemB) : arrrSort.push(elem);
+      elem.length < elemB.length ? arrrSort.push(elemB) : arrrSort.push(elem);
     }
   }
   // step 2 : targeting last index of array after sorting the array
   const arrayLength = arrrSort.length - 1;
   const bigWord = arrrSort[arrayLength];
-  return bigWord
+  return bigWord;
 };
 
-console.log("funtion using for loop :",findBigWorkUsingForLoop(words));
+console.log("funtion using for loop :", findBigWorkUsingForLoop(words));
+
+// filter in for loop
+
+const num = [2, 41, 58, 4, 26, 3, 6, 41, 52, 26, 41];
+const findNum = 52;
+
+let arr = [];
+for (let i = 0; num.length > i; i++) {
+  let elem = num[i];
+  elem === findNum && arr.push(elem);
+}
+console.log("filter arr :", arr);
+
+
+
