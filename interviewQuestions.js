@@ -83,5 +83,30 @@ for (let i = 0; num.length > i; i++) {
 }
 console.log("filter arr :", arr);
 
+// remove duplicate elements from an array using for loop
 
-
+const duplicates = [
+  3,
+  "abc",
+  "zeeshan",
+  1,
+  "sohel",
+  3,
+  "zeeshan",
+  "abc",
+  3,
+  "sohel",
+  1,
+];
+// useing for loop for iteration
+// using indexOf method for getting element index
+//matching the element index with looping index
+const handleRemoveDuplicate = (array) => {
+  let removeDuplicate = [];
+  for (let i = 0; array.length > i; i++) {
+    let elem = array[i];
+    array.indexOf(elem) == i && removeDuplicate.push(elem);
+  }
+  return removeDuplicate;
+};
+console.log(handleRemoveDuplicate(duplicates));
