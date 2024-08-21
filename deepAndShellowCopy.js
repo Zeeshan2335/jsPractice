@@ -1,5 +1,6 @@
 // shellow Copy
 // shellow copy will not create a new object or array ,it will copy the reference of the object so whenever we changes the copied object it will reflect to the original object.
+// it is basiclly work on pass by reference
 
 const obj1 = { name: "zeeshan", age: "25" };
 
@@ -12,7 +13,7 @@ console.log(obj2); //{ name: 'zeeshan', age: 10 }
 console.log("checked :",obj1 == obj2); // true
 
 // deep copy
-
+// it is basiclly work on pass by value
 const a = { name: "Syed", city: "nanded" };
 const b = JSON.parse(JSON.stringify(a))
 console.log( "checked :", a==b);//false
