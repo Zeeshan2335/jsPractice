@@ -10,8 +10,6 @@ const newFunction = outerFunction('outside');
 
 newFunction('inside');
 
-
-
 function outerFunction() {
     let counter = 0; // This is a variable in the outer function's scope
   

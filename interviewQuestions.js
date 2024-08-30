@@ -19,7 +19,7 @@ const handleTargetPairs = (array, targetValue) => {
 };
 
 // console.log("result", aa);
-console.log("function result:", handleTargetPairs(abc, target));
+// console.log("function result:", handleTargetPairs(abc, target));
 
 // make paramet
 
@@ -29,7 +29,7 @@ console.log("function result:", handleTargetPairs(abc, target));
 let inputVal = 6;
 let str = "";
 for (let i = 0; inputVal + 1 > i; i++) {
-  console.log(i);
+  // console.log(i);
   for (let j = 0; i > j; j++) {
     str += "*";
   }
@@ -47,7 +47,7 @@ const handleBigWord = (array) => {
   const bigLengthWord = wordSort[bigLength];
   return bigLengthWord;
 };
-console.log("function :", handleBigWord(words));
+// console.log("function :", handleBigWord(words));
 
 //  console.log('wordSort',bigLengthWord);
 
@@ -69,7 +69,7 @@ const findBigWorkUsingForLoop = (array) => {
   return bigWord;
 };
 
-console.log("funtion using for loop :", findBigWorkUsingForLoop(words));
+// console.log("funtion using for loop :", findBigWorkUsingForLoop(words));
 
 // filter in for loop
 
@@ -81,7 +81,7 @@ for (let i = 0; num.length > i; i++) {
   let elem = num[i];
   elem === findNum && arr.push(elem);
 }
-console.log("filter arr :", arr);
+// console.log("filter arr :", arr);
 
 // remove duplicate elements from an array using for loop
 
@@ -109,4 +109,67 @@ const handleRemoveDuplicate = (array) => {
   }
   return removeDuplicate;
 };
-console.log(handleRemoveDuplicate(duplicates));
+// console.log(handleRemoveDuplicate(duplicates));
+
+const interviewQ1 = [2, 5, 6, 4, 5, 5, 4, 2, 2, 2, 8, 7];
+
+function mostRepeated(arr) {
+  const obj = {};
+  let count = 0;
+  let repeatedNum = null;
+
+  for (let i = 0; arr.length > i; i++) {
+    let num = arr[i];
+    obj[num] = (obj[num] || 0) + 1; // obj[num] : { '2': 4, '4': 2, '5': 3, '6': 1, '7': 1, '8': 1 }
+
+    // filtering the most repeated key from obj
+    if (obj[num] > count) {
+      count = obj[num];
+      repeatedNum = num;
+    }
+  }
+
+  return repeatedNum;
+}
+console.log(mostRepeated(interviewQ1));
+
+function mostFrequent(arr) {
+  const frequencyMap = {};
+  let maxCount = 0;
+  let mostFrequentNumber = null;
+
+  for (let i = 0; i < arr.length; i++) {
+    const num = arr[i];
+
+    frequencyMap[num] = (frequencyMap[num] || 0) + 1;
+
+    // if (frequencyMap[num] > maxCount) {
+    //   maxCount = frequencyMap[num];
+    //   mostFrequentNumber = num;
+    //   console.log( "frequencyMap[num] :", frequencyMap[num]);
+    //   // console.log( "mostFrequentNumber :", mostFrequentNumber);
+    // }
+  }
+
+  return mostFrequentNumber;
+}
+
+// console.log(mostFrequent(interviewQ1)); // Output: 2
+
+// filter the numbers including string type num.
+
+const data = [3, 5, "25", 8, "at", "78", "sohel", 5, "45", "a56", "89"];
+
+function filterNum(arr) {
+  let NumArr = [];
+
+  for (let i = 0; arr.length > i; i++) {
+    if (!isNaN(arr[i])) {
+      NumArr.push(arr[i]);
+    }
+  }
+
+  return NumArr;
+}
+
+console.log(filterNum(data)); //[3, 5, "25", 8, "78", 5, "45", "89"]

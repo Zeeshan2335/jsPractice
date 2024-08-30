@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .main {
+        background-color: yellow;
+      }
+    </style>
+ <body>
+<div id="grand-parent" style="padding: 20px; background-color: red;" >
+  <div id="parent" style="padding: 20px; background-color: lightblue;">
+    Parent Div
+    <button id="child" style="margin-top: 10px;">Click Me</button>
+</div>
+</div>
+
+  <script>
+      // Event listener for the parent div
+      document.getElementById('parent').addEventListener('click', function() {
+          alert('Parent Div clicked!');
+      });
+      document.getElementById('grand-parent').addEventListener('click', function() {
+          alert('Grand Parent Div clicked!');
+      });
+
+      // Event listener for the child button
+      document.getElementById('child').addEventListener('click', function(event) {
+          alert('Button clicked!');
+          // Prevent the event from bubbling up to the parent
+          // event.stopPropagation();
+      });
+  </script>
+  <script src="./interviewQuestions.js" ></script>
+</body>
+</html>
